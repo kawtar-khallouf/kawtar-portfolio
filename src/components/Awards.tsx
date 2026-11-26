@@ -1,73 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaTrophy, FaMedal } from 'react-icons/fa';
-
-export const Awards: React.FC = () => {
-  const awards = [
-    {
-      place: '1st Place',
-      event: '36h Hackathon – ENSET Challenge',
-      icon: <FaTrophy className="text-yellow-500" />,
-      tag: 'Winner'
-    },
-    {
-      place: '1st Place',
-      event: 'Hackathon ENIM Rabat – Business Forum',
-      icon: <FaTrophy className="text-yellow-500" />,
-      tag: 'Winner'
-    },
-    {
-      place: '2nd Place',
-      event: 'Hackathon 3rd Edition – ENSEM Casablanca',
-      icon: <FaMedal className="text-slate-300" />,
-      tag: 'Runner-up'
-    }
-  ];
-
-  return (
-    <section id="awards" className="py-24 relative overflow-hidden bg-slate-950/20 border-t border-white/[0.03]">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-left">
-        
-        <div className="flex flex-col items-start mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-indigo mb-2">
-            Achievements
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-            Hackathons & Awards
-          </h2>
-        </div>
-
-        {/* Awards Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {awards.map((award, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel glass-panel-hover p-6 rounded-2xl border-white/[0.04] bg-slate-900/10 flex items-start gap-4 relative overflow-hidden"
-            >
-              <div className="text-2xl p-3.5 rounded-xl bg-slate-950 border border-white/[0.05] flex-shrink-0">
-                {award.icon}
-              </div>
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="text-xs font-bold text-brand-indigo uppercase tracking-wider mb-1">
-                    {award.tag}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2 leading-snug">
-                    {award.place}
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    {award.event}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+import { FaMedal, FaRocket, FaTrophy } from 'react-icons/fa';
+const achievements=[
+  {icon:FaMedal,badge:'International competition · 2026',title:'Bronze Award',detail:"China International College Students’ Innovation Competition — Morocco regional competition."},
+  {icon:FaTrophy,badge:'Competition project',title:'2nd Prize · STADEAT',detail:'Capgemini competition recognition for the STADEAT project.'},
+  {icon:FaRocket,badge:'Community · 2026',title:'NASA Space Apps Casablanca',detail:'Contributed to the official judging panel of the NASA International Space Apps Challenge.'},
+  {icon:FaTrophy,badge:'Hackathon awards',title:'ENSET · ENIM · ENSEM',detail:'1st place at ENSET Challenge and ENIM Rabat; 2nd place at ENSEM Casablanca.'},
+];
+export const Awards: React.FC = ()=><section id="highlights" className="py-24 md:py-32"><div className="section-wrap"><div className="mb-11"><div className="eyebrow">05 / Recognition</div><h2 className="section-title">Beyond the <span className="text-glow">classroom.</span></h2><p className="max-w-[690px] text-sm leading-[1.9] text-[#a4b7ca]">Competitions, innovation initiatives and community engagement that have shaped my approach to teamwork.</p></div><div className="grid gap-4 md:grid-cols-2">{achievements.map(x=><article key={x.title} className="surface-card surface-hover flex gap-5 p-6 sm:p-7"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#71dcd1]/20 bg-[#5bd2c8]/10 p-4 text-lg text-[#8de5dc]"><x.icon/></div><div><div className="mb-2 text-[10px] font-extrabold uppercase tracking-[.17em] text-[#80dcd2]">{x.badge}</div><h3 className="mb-2 text-[17px] font-extrabold">{x.title}</h3><p className="text-[13px] leading-[1.85] text-[#a4b5c9]">{x.detail}</p></div></article>)}</div></div></section>;

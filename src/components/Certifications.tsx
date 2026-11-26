@@ -1,77 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaCertificate } from 'react-icons/fa';
-export const Certifications: React.FC = () => {
-  const certifications = [
-    {
-      title: 'AWS Academy Cloud Computing & Data Engineering',
-      issuer: 'Amazon Web Services',
-      tag: 'Cloud & Data'
-    },
-    {
-      title: 'HCIA-Cloud Computing V5.5',
-      issuer: 'Huawei Technologies',
-      tag: 'Cloud Infrastructure'
-    },
-    {
-      title: 'Cisco CCNA – Routing & Switching Essentials',
-      issuer: 'Cisco',
-      tag: 'Networking'
-    },
-    {
-      title: 'Linux Essentials',
-      issuer: 'Cisco NetAcad / LPI',
-      tag: 'Linux Systems'
-    },
-    {
-      title: 'Python Essentials 1 & 2',
-      issuer: 'Cisco Networking Academy',
-      tag: 'Programming'
-    }
-  ];
-
-  return (
-    <section id="certifications" className="py-24 relative overflow-hidden bg-slate-950/40">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 text-left">
-        
-        <div className="flex flex-col items-start mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-indigo mb-2">
-            Credentials
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-            Professional Certifications
-          </h2>
-        </div>
-
-        {/* Certifications Grid List */}
-        <div className="grid md:grid-cols-2 gap-4">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -15 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="glass-panel glass-panel-hover p-5 rounded-xl border-white/[0.04] bg-slate-900/10 flex items-center gap-4"
-            >
-              <div className="w-10 h-10 rounded-lg bg-slate-950 border border-white/[0.05] flex items-center justify-center text-brand-indigo flex-shrink-0">
-                <FaCertificate />
-              </div>
-              <div className="min-w-0">
-                <div className="text-[10px] font-bold text-brand-teal uppercase tracking-wider mb-0.5">
-                  {cert.tag}
-                </div>
-                <h3 className="text-sm font-bold text-white leading-snug truncate" title={cert.title}>
-                  {cert.title}
-                </h3>
-                <p className="text-xs text-slate-400">
-                  {cert.issuer}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+import { FaCertificate, FaArrowRight } from 'react-icons/fa';
+const certs=[
+  {title:'Cloud Architecting & Data Engineering',from:'AWS Academy',tag:'Cloud & data'},
+  {title:'Machine Learning',from:'DeepLearning.AI / Stanford',tag:'AI'},
+  {title:'Data Analytics Essentials',from:'Cisco Networking Academy',tag:'Analytics'},
+  {title:'HCIA — Cloud Computing',from:'Huawei',tag:'Cloud'},
+  {title:'Cybersecurity Foundations',from:'Hackviser · 2026',tag:'Security'},
+  {title:'Python Essentials',from:'Cisco Networking Academy',tag:'Programming'},
+];
+export const Certifications: React.FC = ()=><section id="certifications" className="border-y border-white/[.045] bg-[#0a111e]/55 py-24 md:py-32"><div className="section-wrap"><div className="mb-11"><div className="eyebrow">06 / Continuous learning</div><h2 className="section-title">Selected <span className="text-glow">credentials.</span></h2></div><div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">{certs.map(c=><article key={c.title} className="surface-card surface-hover group flex items-start gap-4 p-5"><div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#5cdaca]/20 bg-[#5cdaca]/[.08] text-[#8aeade]"><FaCertificate/></div><div className="flex-1"><span className="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#7bd8ce]">{c.tag}</span><h3 className="mb-1 mt-1 text-[14px] font-extrabold leading-snug">{c.title}</h3><p className="text-xs text-[#92a5bb]">{c.from}</p></div><FaArrowRight className="mt-1 text-[10px] text-[#54677b] transition-colors group-hover:text-[#8be6dc]"/></article>)}</div></div></section>;
