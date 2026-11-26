@@ -21,8 +21,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
-        display: ["Outfit", "sans-serif"],
+        sans: ["DM Sans", "sans-serif"],
+        display: ["Manrope", "sans-serif"],
       },
       boxShadow: {
         glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",

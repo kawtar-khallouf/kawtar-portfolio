@@ -1,0 +1,9 @@
+import React from 'react';
+import { FaMedal, FaRocket, FaTrophy } from 'react-icons/fa';
+const achievements=[
+  {icon:FaMedal,badge:'International competition · 2026',title:'Bronze Award',detail:"China International College Students’ Innovation Competition — Morocco regional competition."},
+  {icon:FaTrophy,badge:'Competition project',title:'2nd Prize · STADEAT',detail:'Capgemini competition recognition for the STADEAT project.'},
+  {icon:FaRocket,badge:'Community · 2026',title:'NASA Space Apps Casablanca',detail:'Contributed to the official judging panel of the NASA International Space Apps Challenge.'},
+  {icon:FaTrophy,badge:'Hackathon awards',title:'ENSET · ENIM · ENSEM',detail:'1st place at ENSET Challenge and ENIM Rabat; 2nd place at ENSEM Casablanca.'},
+];
+export const Awards: React.FC = ()=><section id="highlights" className="py-24 md:py-32"><div className="section-wrap"><div className="mb-11"><div className="eyebrow">05 / Recognition</div><h2 className="section-title">Beyond the <span className="text-glow">classroom.</span></h2><p className="max-w-[690px] text-sm leading-[1.9] text-[#a4b7ca]">Competitions, innovation initiatives and community engagement that have shaped my approach to teamwork.</p></div><div className="grid gap-4 md:grid-cols-2">{achievements.map(x=><article key={x.title} className="surface-card surface-hover flex gap-5 p-6 sm:p-7"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#71dcd1]/20 bg-[#5bd2c8]/10 p-4 text-lg text-[#8de5dc]"><x.icon/></div><div><div className="mb-2 text-[10px] font-extrabold uppercase tracking-[.17em] text-[#80dcd2]">{x.badge}</div><h3 className="mb-2 text-[17px] font-extrabold">{x.title}</h3><p className="text-[13px] leading-[1.85] text-[#a4b5c9]">{x.detail}</p></div></article>)}</div></div></section>;

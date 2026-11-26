@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# Kawtar Khallouf — Portfolio PFE 2027
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Professional portfolio built with React 18, TypeScript, Vite, Tailwind CSS, React Icons and Framer Motion.
 
-Currently, two official plugins are available:
+## What's new
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Updated PFE internship availability (January 2027), academic status and SEO.
+- Refreshed visual design, responsive navigation and accessible project filters.
+- Updated work samples (Azure Group IoT, AGRIVISION, STADEAT, Smart Energy Guardian, NEXUS Territoire, Gestura).
+- Updated awards and credentials based on the supplied repository and PFE CV.
+- Replaced the old **PFA 2026** resume with `public/Kawtar_Khallouf_CV_PFE_2027_FR.pdf`.
+- Corrected LinkedIn URL and contact actions.
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install Node.js 20 or newer.
+2. `npm ci`
+3. `npm run dev`
+4. Open the URL Vite prints (typically `http://localhost:5173`).
 
-## Expanding the Oxlint configuration
+## Build & deploy to Netlify
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Node version:** 20 or newer
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+When connected to GitHub, commit these files to the linked repository; Netlify will automatically rebuild if automatic deployment is enabled. Or run `npm run build` locally, then drag the generated `dist` folder into Netlify's manual deployment interface.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Final checks before public sharing
+
+- Double-check award-project attribution (the latest CV and prior correspondence assign the Bronze Award differently). This site lists the award without asserting a project attribution.
+- Review descriptions for accuracy and add verified screenshots, demos or repository links when available.
+- The PFE CV is the latest supplied FR version; review it and optionally add an EN version before international applications.
+- Ensure the GitHub profile `github.com/kawtar-khallouf` is the desired public profile.
+- The portfolio includes no live contact form or analytics tracking; links use email, LinkedIn and GitHub.
